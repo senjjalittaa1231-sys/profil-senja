@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --hijau: #536b55;
+    --hijau-muda: #dce5d5;
+    --krem: #f8f6ee;
+    --putih: #ffffff;
+    --teks: #343d32;
+    --abu: #777d71;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--krem);
+    color: var(--teks);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background: var(--krem);
+}
+
+.logo {
+    color: var(--hijau);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #b18a71;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--teks);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--hijau);
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    margin: auto;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 35px;
+    padding: 45px 0 65px;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.tag {
+    color: var(--hijau);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero h1 span {
+    color: var(--hijau);
+}
+
+.hero-text > p:not(.tag) {
+    color: var(--abu);
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--hijau);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #3e543f;
+    transform: translateY(-3px);
+}
+
+.hero-photo {
+    position: relative;
+    width: 220px;
+    height: 260px;
+    flex-shrink: 0;
+}
+
+.hero-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 48% 48% 12px 12px;
+}
+
+.photo-decoration {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--hijau);
+    border-radius: 48% 48% 12px 12px;
+}
+
+.photo-label {
+    position: absolute;
+    z-index: 2;
+    bottom: 15px;
+    right: -18px;
+    background: var(--putih);
+    color: var(--hijau);
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    box-shadow: 0 3px 12px #00000012;
+}
+
+.skills, .gallery {
+    padding: 45px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: var(--hijau);
+    margin-bottom: 5px;
+}
+
+.section-heading > p:last-child {
+    font-size: 14px;
+    color: var(--abu);
+}
+
+.skill-list, .gallery-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: var(--putih);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e8e9df;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px #536b551a;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--hijau-muda);
+    color: var(--hijau);
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: var(--hijau);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--abu);
+    min-height: 48px;
+}
+
+.skill-line {
+    height: 5px;
+    background: #edf0e9;
+    border-radius: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.skill-line span {
+    display: block;
+    height: 100%;
+    background: var(--hijau);
+    border-radius: 10px;
+}
+
+.gallery figure {
+    background: var(--putih);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.gallery figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px #536b551a;
+}
+
+.gallery figure img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.gallery figcaption {
+    padding: 18px;
+}
+
+.gallery figcaption span {
+    font-size: 10px;
+    color: var(--hijau);
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.gallery figcaption h3 {
+    font-family: Georgia, serif;
+    font-size: 19px;
+    margin-top: 5px;
+}
+
+.site-footer {
+    margin-top: 35px;
+    background: #354638;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.footer-logo {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    color: #dce5d5;
+}
+
+.site-footer p {
+    font-size: 13px;
+}
+
+.copyright {
+    margin-top: 15px;
+    color: #c4d0c1;
+    font-size: 11px !important;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .site-header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 5%;
+    }
+
+    .hero {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        padding: 70px 20px;
+    }
+
+    .hero-photo {
+        width: 250px;
+        height: 290px;
+    }
+
+    .skill-list, .gallery-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1100px;
+    }
+
+    .site-header {
+        padding-left: max(5%, calc((100% - 1100px) / 2));
+        padding-right: max(5%, calc((100% - 1100px) / 2));
+    }
+
+    .hero {
+        gap: 100px;
+        min-height: 480px;
+    }
+
+    .hero-photo {
+        width: 300px;
+        height: 350px;
+    }
+
+    .skill-list, .gallery-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Mode gelap otomatis */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --krem: #1d251f;
+        --putih: #2b352d;
+        --teks: #edf1e9;
+        --abu: #bdc7b9;
+        --hijau-muda: #3b4c3e;
+    }
+
+    .card, .gallery figure {
+        border-color: #405043;
+    }
+
+    .skill-line {
+        background: #414c42;
+    }
+
+    nav a {
+        color: var(--teks);
+    }
+}
